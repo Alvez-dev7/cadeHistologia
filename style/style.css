@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root{
+
+    --fundo-principal: #F5F2EB;
+    --texto-principal: #202725;
+    --botoes:#254D46;
+    --cor-cta:#A34535;
+
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: var(--fonte-principal);
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    padding: 0 10px;
+}
+
+
+header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 64px;
+    border:#202725 1px dashed;
+
+   
+}
+
+#tituloHeader{
+    font-weight: 750;
+    font-size: 1.3rem;
+}
+
+#tituloPrincipal{
+    font-size: 0.9rem;
+
+    margin: 40px 0 44px 0;
+}
+
+#botao-explorar{
+    min-height: 45px;
+    min-width: 220px;
+
+    background-color: var(--botoes);
+    color: var(--fundo-principal);
+
+    font-weight: 400;
+    font-size: 1rem;
+
+    border-radius: 5px;
+
+}
