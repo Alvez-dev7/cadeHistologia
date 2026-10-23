@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadê - Histologia</title>
+    <title>Cadê Histologia?</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
     <header>
-
-        <div id="tituloHeader">
-            Cadê Histologia?
-        </div>
-
-        <!--<div id="menuHeader">
-            <a href="#">Tecidos Gerais</a>
-            <a href="#">Tecido Nervoso</a>
-            <a href="#">Quiz</a>
-        </div> -->
-
-        <div id="menuHeader">
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-        </div>
-
+        <div id="tituloHeader">Cadê Histologia?</div>
+        <button id="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">
+            <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="menu-navegacao" aria-label="Navegação principal" hidden>
+            <a href="#tecidos">Quatro tecidos</a>
+            <a href="#explore-neuronio">Tecido nervoso</a>
+            <a href="#celulas-glia">Células da glia</a>
+            <a href="#formas-neuronios">Formas dos neurônios</a>
+            <a href="#ative-neuronio">Ative o neurônio</a>
+            <a href="#estimulo-resposta">Do estímulo à resposta</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#fontes">Fontes</a>
+        </nav>
     </header>
 
     <main>
@@ -36,16 +32,13 @@
                 <h1>Pequenas estruturas.<br>Grandes funções.</h1>
 
                 <p id="descricaoTituloPrincipal">Descubra os tecidos que formam seu corpo e como eles trabalham juntos.</p>
-
+                <a id="botao-explorar" href="#tecidos">Explorar os tecidos</a>
             </div>
-            <button id="botao-explorar">Explorar os tecidos</button>
 
             <figure>
-                <div class="micrografia" role="img" aria-label="Placeholder para micrografia de tecido nervoso">
-                    Micrografia de tecido nervoso
-                </div>
+                <img id="imagem-abertura" class="micrografia" src="imagens/tecido-nervoso-feixe.jpg" alt="Feixe de nervos em corte longitudinal, corado com tetróxido de ósmio, aumento de 400 vezes">
                 <figcaption>
-                    <p>Imagem e crédito a definir</p>
+                    <p>Feixe nervoso em corte longitudinal, 400× — Berkshire Community College Bioscience Image Library, CC0; Wikimedia Commons.</p>
                 </figcaption>
             </figure>
 
@@ -66,11 +59,9 @@
 
             <article class="informacao-tecido" aria-live="polite">
                 <figure id="figura-tecido">
-                    <div class="img-tecido" id="placeholder-tecido" role="img" aria-label="Placeholder de imagem do tecido epitelial">
-                        Placeholder de imagem: tecido epitelial
-                    </div>
+                    <img class="img-tecido" id="placeholder-tecido" src="imagens/tecido-epitelial.jpg" alt="Epitélio pavimentoso simples humano em preparação histológica, aumento de 400 vezes" loading="lazy" decoding="async">
                     <figcaption>
-                        <p id="legenda-tecido">Imagem e crédito a definir</p>
+                    <p id="legenda-tecido">Epitélio pavimentoso simples, 400× — Berkshire Community College Bioscience Image Library, CC0; Wikimedia Commons.</p>
                     </figcaption>
                 </figure>
 
@@ -94,12 +85,454 @@
             </article>
         </section>
 
+        <section id="explore-neuronio" class="secao-conteudo">
+            <div class="titulo-secao">
+                <h2>Explore o neurônio</h2>
+                <p>Selecione uma estrutura para conhecer sua função.</p>
+            </div>
+
+            <div class="painel-neuronio">
+                <figure class="figura-neuronio">
+                    <svg class="diagrama-neuronio" viewBox="0 0 900 340" role="img" aria-labelledby="titulo-diagrama-neuronio descricao-diagrama-neuronio">
+                        <title id="titulo-diagrama-neuronio">Neurônio multipolar mielinizado</title>
+                        <desc id="descricao-diagrama-neuronio">Esquema fora de escala. Ramificações dendríticas chegam a um corpo celular com núcleo; um axônio contínuo atravessa segmentos de mielina separados por nódulos de Ranvier e termina em uma arborização axônica.</desc>
+                        <g class="parte-diagrama neuronio-dendritos" data-parte-diagrama="dendritos">
+                            <path d="M151 143 C134 130 122 111 118 91 C115 72 106 61 90 54 M118 91 C102 91 88 84 76 73 M117 87 C128 69 129 52 125 38"/>
+                            <path d="M148 153 C129 146 111 134 99 119 C88 105 75 99 59 99 M100 120 C84 122 69 116 56 107 M99 119 C103 102 100 87 92 74"/>
+                            <path d="M150 181 C132 192 119 208 113 226 C108 243 96 254 80 258 M113 226 C96 222 81 226 67 236 M113 226 C124 241 128 255 124 272"/>
+                            <path d="M161 197 C150 213 145 231 148 249 C150 266 144 279 131 289 M148 249 C133 251 120 260 111 273"/>
+                            <path d="M194 136 C207 122 214 105 213 88 C212 73 218 61 230 52 M213 88 C229 83 239 72 246 59"/>
+                        </g>
+                        <path class="parte-diagrama neuronio-axonio" data-parte-diagrama="axonio" d="M221 172 C245 168 264 169 282 171 C316 175 339 174 368 171 C397 168 421 168 447 171 C488 176 522 175 557 171 C599 166 630 169 660 171 C689 173 711 171 742 171"/>
+                        <g class="parte-diagrama neuronio-mielina" data-parte-diagrama="mielina">
+                            <path d="M278 151 C298 146 321 147 344 153 L342 188 C319 183 298 184 278 190 C273 178 273 163 278 151Z"/>
+                            <path d="M365 153 C386 147 408 147 430 152 L428 188 C407 183 386 184 365 190 C360 178 360 165 365 153Z"/>
+                            <path d="M451 152 C473 147 495 147 517 153 L515 188 C494 183 473 184 451 190 C446 178 446 164 451 152Z"/>
+                            <path d="M538 153 C560 147 582 147 604 152 L602 188 C581 183 560 184 538 190 C533 178 533 165 538 153Z"/>
+                            <path d="M625 152 C646 147 666 148 684 153 L682 188 C664 183 645 184 625 190 C620 178 620 164 625 152Z"/>
+                        </g>
+                        <g class="parte-diagrama neuronio-nodulos" data-parte-diagrama="nodulos">
+                            <path d="M348 154 C342 161 342 180 348 187 M361 154 C367 161 367 180 361 187"/>
+                            <path d="M434 154 C428 161 428 180 434 187 M447 154 C453 161 453 180 447 187"/>
+                            <path d="M521 154 C515 161 515 180 521 187 M534 154 C540 161 540 180 534 187"/>
+                            <path d="M608 154 C602 161 602 180 608 187 M621 154 C627 161 627 180 621 187"/>
+                        </g>
+                        <g class="parte-diagrama neuronio-terminacoes" data-parte-diagrama="terminacoes">
+                            <path d="M742 171 C765 169 779 163 792 148 C805 132 817 124 835 120 M792 148 C799 132 799 117 794 103 M794 103 C785 91 782 78 785 65 M794 103 C805 94 812 81 814 68"/>
+                            <path d="M760 171 C783 173 800 179 814 192 C826 203 839 208 853 207 M814 192 C816 209 825 220 838 229 M814 192 C829 184 842 183 856 187"/>
+                            <circle class="neuronio-botao" cx="785" cy="65" r="4.5"/><circle class="neuronio-botao" cx="814" cy="68" r="4.5"/>
+                            <circle class="neuronio-botao" cx="835" cy="120" r="4.5"/><circle class="neuronio-botao" cx="853" cy="207" r="4.5"/><circle class="neuronio-botao" cx="838" cy="229" r="4.5"/><circle class="neuronio-botao" cx="856" cy="187" r="4.5"/>
+                        </g>
+                        <g class="parte-diagrama neuronio-corpo" data-parte-diagrama="corpo">
+                            <path class="membrana-soma" d="M158 135 C146 141 141 153 146 165 C135 177 141 191 155 196 C158 211 174 218 188 210 C201 217 216 207 218 193 C231 184 230 169 220 158 C222 144 209 134 197 136 C187 124 169 125 158 135Z"/>
+                            <ellipse class="nucleo-neuronio" cx="176" cy="173" rx="12" ry="10"/>
+                            <circle class="nucleolo-neuronio" cx="179" cy="173" r="3"/>
+                        </g>
+                    </svg>
+                    <div class="detalhe-axonio" role="img" aria-label="Detalhe ampliado da bainha de mielina e dos nódulos de Ranvier">
+                        <span class="rotulo-detalhe-axonio">Detalhe ampliado do axônio</span>
+                        <svg viewBox="0 0 640 150" aria-hidden="true">
+                            <path class="parte-diagrama neuronio-axonio" data-parte-diagrama="axonio" d="M18 76 C142 73 246 79 374 76 C475 73 545 78 622 76"/>
+                            <g class="parte-diagrama neuronio-mielina" data-parte-diagrama="mielina">
+                                <path d="M38 54 C82 48 118 49 145 54 L143 98 C117 93 81 93 38 99 C30 86 30 67 38 54Z"/>
+                                <path d="M170 54 C210 49 247 49 279 54 L277 98 C245 93 210 93 170 99 C162 86 162 67 170 54Z"/>
+                                <path d="M304 54 C345 49 382 49 414 54 L412 98 C380 93 345 93 304 99 C296 86 296 67 304 54Z"/>
+                                <path d="M438 54 C478 49 514 49 546 54 L544 98 C512 93 478 93 438 99 C430 86 430 67 438 54Z"/>
+                            </g>
+                            <g class="parte-diagrama neuronio-nodulos" data-parte-diagrama="nodulos">
+                                <path d="M151 55 C143 64 143 88 151 97 M164 55 C172 64 172 88 164 97"/>
+                                <path d="M285 55 C277 64 277 88 285 97 M298 55 C306 64 306 88 298 97"/>
+                                <path d="M419 55 C411 64 411 88 419 97 M432 55 C440 64 440 88 432 97"/>
+                            </g>
+                        </svg>
+                        <span class="legenda-detalhe-axonio">Segmentos de mielina e nódulos de Ranvier</span>
+                    </div>
+                    <figcaption>Esquema de um neurônio multipolar mielinizado; representação fora de escala.</figcaption>
+                </figure>
+
+                <div class="conteudo-interativo">
+                    <div class="seletores-partes" role="group" aria-label="Partes do neurônio">
+                        <button class="botao-seletor selecionado" type="button" data-parte="dendritos" aria-pressed="true">Dendritos</button>
+                        <button class="botao-seletor" type="button" data-parte="corpo" aria-pressed="false">Corpo celular</button>
+                        <button class="botao-seletor" type="button" data-parte="axonio" aria-pressed="false">Axônio</button>
+                        <button class="botao-seletor" type="button" data-parte="mielina" aria-pressed="false">Bainha de mielina</button>
+                        <button class="botao-seletor" type="button" data-parte="nodulos" aria-pressed="false">Nódulos de Ranvier</button>
+                        <button class="botao-seletor" type="button" data-parte="terminacoes" aria-pressed="false">Terminações axônicas</button>
+                    </div>
+                    <article class="texto-selecionado" aria-live="polite">
+                        <h3 id="titulo-parte">Dendritos</h3>
+                        <p id="descricao-parte">Recebem muitos dos sinais de outras células.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="celulas-glia" class="secao-conteudo">
+            <div class="titulo-secao">
+                <h2>Células da glia</h2>
+                <p>A glia participa do suporte, da proteção e do funcionamento do tecido nervoso. Selecione um tipo para saber mais.</p>
+            </div>
+
+            <div class="seletores-glia" role="group" aria-label="Tipos de células da glia">
+                <button class="botao-seletor selecionado" type="button" data-glia="astrocitos" aria-pressed="true">Astrócitos</button>
+                <button class="botao-seletor" type="button" data-glia="oligodendrocitos" aria-pressed="false">Oligodendrócitos</button>
+                <button class="botao-seletor" type="button" data-glia="microglia" aria-pressed="false">Micróglia</button>
+                <button class="botao-seletor" type="button" data-glia="ependimarias" aria-pressed="false">Células ependimárias</button>
+                <button class="botao-seletor" type="button" data-glia="schwann" aria-pressed="false">Células de Schwann</button>
+                <button class="botao-seletor" type="button" data-glia="satelites" aria-pressed="false">Células satélites</button>
+            </div>
+
+            <article class="painel-glia" aria-live="polite">
+                <figure>
+                    <div class="figura-glia">
+                        <svg id="contexto-oligodendrocitos" class="contexto-glia" viewBox="0 0 600 300" aria-hidden="true" hidden>
+                            <g fill="none" stroke="#202725" stroke-width="5" stroke-linecap="round">
+                                <path d="M24 70H576M24 150H576M24 230H576"/>
+                            </g>
+                            <g fill="#F5F2EB" stroke="#254D46" stroke-width="4">
+                                <rect x="60" y="56" width="112" height="28" rx="14"/><rect x="220" y="56" width="112" height="28" rx="14"/><rect x="380" y="56" width="112" height="28" rx="14"/>
+                                <rect x="60" y="136" width="112" height="28" rx="14"/><rect x="220" y="136" width="112" height="28" rx="14"/><rect x="380" y="136" width="112" height="28" rx="14"/>
+                                <rect x="60" y="216" width="112" height="28" rx="14"/><rect x="220" y="216" width="112" height="28" rx="14"/><rect x="380" y="216" width="112" height="28" rx="14"/>
+                            </g>
+                        </svg>
+                        <svg id="contexto-ependimarias" class="contexto-glia" viewBox="0 0 600 300" aria-hidden="true" hidden>
+                            <path d="M24 68H576" stroke="#254D46" stroke-width="5" fill="none"/>
+                            <g fill="#DDE9E2" stroke="#254D46" stroke-width="4">
+                                <path d="M36 75Q88 52 140 75V244H36Z"/><path d="M142 75Q194 52 246 75V244H142Z"/><path d="M248 75Q300 52 352 75V244H248Z"/><path d="M354 75Q406 52 458 75V244H354Z"/><path d="M460 75Q512 52 564 75V244H460Z"/>
+                            </g>
+                            <g fill="#A34535"><ellipse cx="88" cy="190" rx="13" ry="20"/><ellipse cx="194" cy="190" rx="13" ry="20"/><ellipse cx="300" cy="190" rx="13" ry="20"/><ellipse cx="406" cy="190" rx="13" ry="20"/><ellipse cx="512" cy="190" rx="13" ry="20"/></g>
+                            <g fill="none" stroke="#202725" stroke-width="4" stroke-linecap="round">
+                                <path d="M45 67 39 40M61 66 61 34M78 65 84 39M96 65 101 31M114 66 120 39M151 67 145 40M167 66 167 34M184 65 190 39M202 65 207 31M220 66 226 39M257 67 251 40M273 66 273 34M290 65 296 39M308 65 313 31M326 66 332 39M363 67 357 40M379 66 379 34M396 65 402 39M414 65 419 31M432 66 438 39M469 67 463 40M485 66 485 34M502 65 508 39M520 65 525 31M538 66 544 39"/>
+                            </g>
+                        </svg>
+                        <img id="placeholder-glia" class="img-glia" src="imagens/glia-astrocito-servier.png" alt="Ilustração de astrócito com numerosos prolongamentos ramificados" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption id="legenda-glia">Imagem fornecida por Servier Medical Art, licença CC BY 4.0.</figcaption>
+                </figure>
+                <div class="texto-selecionado">
+                    <h3 id="titulo-glia">Astrócitos</h3>
+                    <p id="descricao-glia">Ajudam a regular o ambiente dos neurônios e oferecem suporte metabólico.</p>
+                    <div class="atributo-explicacao">
+                        <h4>Localização</h4>
+                        <p id="local-glia">Sistema nervoso central.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="formas-neuronios" class="secao-conteudo">
+            <div class="titulo-secao">
+                <h2>Formas dos neurônios</h2>
+                <p>Esta classificação considera a forma da célula. Selecione um tipo para comparar suas estruturas.</p>
+            </div>
+
+            <div class="seletores-formas" role="group" aria-label="Formas dos neurônios">
+                <button class="botao-seletor selecionado" type="button" data-forma="multipolar" aria-pressed="true">Multipolar</button>
+                <button class="botao-seletor" type="button" data-forma="bipolar" aria-pressed="false">Bipolar</button>
+                <button class="botao-seletor" type="button" data-forma="pseudounipolar" aria-pressed="false">Pseudounipolar</button>
+            </div>
+
+            <article class="painel-forma" aria-live="polite">
+                <figure class="figura-forma">
+                    <svg id="desenho-multipolar" class="desenho-forma" viewBox="0 0 900 340" role="img" aria-label="Esquema de neurônio multipolar: vários dendritos e um axônio">
+                        <g class="neuronio-dendritos">
+                            <path d="M151 143 C134 130 122 111 118 91 C115 72 106 61 90 54 M118 91 C102 91 88 84 76 73 M117 87 C128 69 129 52 125 38"/>
+                            <path d="M148 153 C129 146 111 134 99 119 C88 105 75 99 59 99 M100 120 C84 122 69 116 56 107 M99 119 C103 102 100 87 92 74"/>
+                            <path d="M150 181 C132 192 119 208 113 226 C108 243 96 254 80 258 M113 226 C96 222 81 226 67 236 M113 226 C124 241 128 255 124 272"/>
+                            <path d="M161 197 C150 213 145 231 148 249 C150 266 144 279 131 289 M148 249 C133 251 120 260 111 273"/>
+                            <path d="M194 136 C207 122 214 105 213 88 C212 73 218 61 230 52 M213 88 C229 83 239 72 246 59"/>
+                        </g>
+                        <path class="neuronio-axonio" d="M221 172 C245 168 264 169 282 171 C316 175 339 174 368 171 C397 168 421 168 447 171 C488 176 522 175 557 171 C599 166 630 169 660 171 C689 173 711 171 742 171"/>
+                        <g class="neuronio-mielina">
+                            <path d="M278 151 C298 146 321 147 344 153 L342 188 C319 183 298 184 278 190 C273 178 273 163 278 151Z"/>
+                            <path d="M365 153 C386 147 408 147 430 152 L428 188 C407 183 386 184 365 190 C360 178 360 165 365 153Z"/>
+                            <path d="M451 152 C473 147 495 147 517 153 L515 188 C494 183 473 184 451 190 C446 178 446 164 451 152Z"/>
+                            <path d="M538 153 C560 147 582 147 604 152 L602 188 C581 183 560 184 538 190 C533 178 533 165 538 153Z"/>
+                            <path d="M625 152 C646 147 666 148 684 153 L682 188 C664 183 645 184 625 190 C620 178 620 164 625 152Z"/>
+                        </g>
+                        <g class="neuronio-nodulos">
+                            <path d="M348 154 C342 161 342 180 348 187 M361 154 C367 161 367 180 361 187"/>
+                            <path d="M434 154 C428 161 428 180 434 187 M447 154 C453 161 453 180 447 187"/>
+                            <path d="M521 154 C515 161 515 180 521 187 M534 154 C540 161 540 180 534 187"/>
+                            <path d="M608 154 C602 161 602 180 608 187 M621 154 C627 161 627 180 621 187"/>
+                        </g>
+                        <g class="neuronio-terminacoes">
+                            <path d="M742 171 C765 169 779 163 792 148 C805 132 817 124 835 120 M792 148 C799 132 799 117 794 103 M794 103 C785 91 782 78 785 65 M794 103 C805 94 812 81 814 68"/>
+                            <path d="M760 171 C783 173 800 179 814 192 C826 203 839 208 853 207 M814 192 C816 209 825 220 838 229 M814 192 C829 184 842 183 856 187"/>
+                            <circle class="neuronio-botao" cx="785" cy="65" r="4.5"/><circle class="neuronio-botao" cx="814" cy="68" r="4.5"/>
+                            <circle class="neuronio-botao" cx="835" cy="120" r="4.5"/><circle class="neuronio-botao" cx="853" cy="207" r="4.5"/><circle class="neuronio-botao" cx="838" cy="229" r="4.5"/><circle class="neuronio-botao" cx="856" cy="187" r="4.5"/>
+                        </g>
+                        <g class="neuronio-corpo">
+                            <path class="membrana-soma" d="M158 135 C146 141 141 153 146 165 C135 177 141 191 155 196 C158 211 174 218 188 210 C201 217 216 207 218 193 C231 184 230 169 220 158 C222 144 209 134 197 136 C187 124 169 125 158 135Z"/>
+                            <ellipse class="nucleo-neuronio" cx="176" cy="173" rx="12" ry="10"/><circle class="nucleolo-neuronio" cx="179" cy="173" r="3"/>
+                        </g>
+                    </svg>
+                    <svg id="desenho-bipolar" class="desenho-forma" viewBox="0 0 900 340" role="img" aria-label="Esquema de neurônio bipolar: um prolongamento dendrítico e um axonal" hidden>
+                        <g class="neuronio-dendritos">
+                            <path d="M316 162 C280 160 251 157 225 149 C199 141 181 128 166 111 C151 94 138 89 122 91 M166 111 C151 111 138 104 127 94 M166 111 C170 96 168 82 161 69 M225 149 C212 135 204 120 201 103"/>
+                        </g>
+                        <path class="neuronio-axonio" d="M404 171 C435 168 461 170 489 171 C529 174 560 173 595 171 C634 169 675 170 742 171"/>
+                        <g class="neuronio-mielina">
+                            <path d="M476 153 C498 147 520 148 542 153 L540 188 C519 183 498 184 476 190 C471 178 471 165 476 153Z"/>
+                            <path d="M562 153 C584 147 606 147 628 152 L626 188 C605 183 584 184 562 190 C557 178 557 165 562 153Z"/>
+                            <path d="M648 152 C670 147 692 148 714 153 L712 188 C691 183 670 184 648 190 C643 178 643 164 648 152Z"/>
+                        </g>
+                        <g class="neuronio-nodulos">
+                            <path d="M547 154 C541 161 541 180 547 187 M560 154 C566 161 566 180 560 187"/><path d="M633 154 C627 161 627 180 633 187 M646 154 C652 161 652 180 646 187"/>
+                        </g>
+                        <g class="neuronio-terminacoes">
+                            <path d="M742 171 C767 169 785 161 800 146 C815 131 829 123 849 120 M800 146 C807 131 807 116 802 102 M802 102 C793 90 790 78 793 65 M802 102 C813 93 820 80 822 67 M760 171 C784 173 803 180 818 194 C831 206 844 210 859 207 M818 194 C821 211 830 223 844 232"/>
+                            <circle class="neuronio-botao" cx="793" cy="65" r="4.5"/><circle class="neuronio-botao" cx="822" cy="67" r="4.5"/><circle class="neuronio-botao" cx="849" cy="120" r="4.5"/><circle class="neuronio-botao" cx="859" cy="207" r="4.5"/><circle class="neuronio-botao" cx="844" cy="232" r="4.5"/>
+                        </g>
+                        <g class="neuronio-corpo">
+                            <path class="membrana-soma" d="M337 135 C325 141 320 153 325 165 C314 177 320 191 334 196 C337 211 353 218 367 210 C380 217 395 207 397 193 C410 184 409 169 399 158 C401 144 388 134 376 136 C366 124 348 125 337 135Z"/>
+                            <ellipse class="nucleo-neuronio" cx="355" cy="173" rx="12" ry="10"/><circle class="nucleolo-neuronio" cx="358" cy="173" r="3"/>
+                        </g>
+                    </svg>
+                    <svg id="desenho-pseudounipolar" class="desenho-forma" viewBox="0 0 900 340" role="img" aria-label="Esquema de neurônio pseudounipolar: corpo celular lateral ligado a um prolongamento que se bifurca em ramos periférico e central" hidden>
+                        <g class="neuronio-axonio">
+                            <path d="M69 145 C111 143 159 145 208 145 C249 145 278 147 314 150 C362 154 405 154 452 150 C510 146 559 146 609 150 C658 154 699 154 742 171"/>
+                        </g>
+                        <g class="neuronio-ramificacoes">
+                            <path d="M69 145 C54 133 46 119 47 102 C48 87 42 76 30 68 M47 102 C34 99 25 91 19 80 M47 102 C58 90 61 77 58 64 M69 145 C53 155 46 170 48 187 C50 201 44 213 32 221 M48 187 C35 188 25 195 19 206 M48 187 C60 199 63 212 59 225"/>
+                        </g>
+                        <path class="neuronio-corpo-ligacao" d="M208 145 C208 163 210 179 211 197"/>
+                        <g class="neuronio-mielina">
+                            <path d="M91 125 C112 121 133 122 153 127 L151 163 C132 159 112 159 91 165 C86 153 86 138 91 125Z"/>
+                            <path d="M165 127 C181 123 194 124 208 128 L208 162 C194 159 180 159 165 165 C160 153 160 139 165 127Z"/>
+                            <path d="M263 132 C284 127 307 128 330 134 L328 170 C306 165 284 166 263 172 C258 158 258 145 263 132Z"/>
+                            <path d="M350 135 C371 130 393 131 415 136 L413 170 C392 166 371 166 350 173 C345 160 345 147 350 135Z"/>
+                            <path d="M436 135 C458 130 480 131 502 136 L500 170 C479 166 458 166 436 173 C431 160 431 147 436 135Z"/>
+                            <path d="M523 136 C545 131 567 131 589 136 L587 170 C566 166 545 166 523 173 C518 160 518 147 523 136Z"/>
+                            <path d="M610 136 C632 131 654 131 676 136 L674 170 C653 166 632 166 610 173 C605 160 605 147 610 136Z"/>
+                        </g>
+                        <g class="neuronio-nodulos">
+                            <path d="M155 128 C149 136 149 154 155 162 M161 128 C167 136 167 154 161 162"/>
+                            <path d="M334 134 C328 142 328 160 334 168 M347 134 C353 142 353 160 347 168"/><path d="M420 136 C414 144 414 160 420 168 M433 136 C439 144 439 160 433 168"/>
+                            <path d="M507 136 C501 144 501 160 507 168 M520 136 C526 144 526 160 520 168"/><path d="M594 136 C588 144 588 160 594 168 M607 136 C613 144 613 160 607 168"/>
+                        </g>
+                        <g class="neuronio-terminacoes">
+                            <path d="M742 171 C765 169 779 163 792 148 C805 132 817 124 835 120 M792 148 C799 132 799 117 794 103 M794 103 C785 91 782 78 785 65 M794 103 C805 94 812 81 814 68 M760 171 C783 173 800 179 814 192 C826 203 839 208 853 207 M814 192 C816 209 825 220 838 229 M814 192 C829 184 842 183 856 187"/>
+                            <circle class="neuronio-botao" cx="785" cy="65" r="4.5"/><circle class="neuronio-botao" cx="814" cy="68" r="4.5"/><circle class="neuronio-botao" cx="835" cy="120" r="4.5"/><circle class="neuronio-botao" cx="853" cy="207" r="4.5"/><circle class="neuronio-botao" cx="838" cy="229" r="4.5"/><circle class="neuronio-botao" cx="856" cy="187" r="4.5"/>
+                        </g>
+                        <g class="neuronio-corpo">
+                            <path class="membrana-soma" d="M181 211 C168 217 161 229 165 242 C157 254 164 269 178 273 C182 288 198 295 211 287 C224 294 239 284 241 270 C254 261 253 246 243 235 C245 221 232 211 220 213 C210 201 192 201 181 211Z"/>
+                            <ellipse class="nucleo-neuronio" cx="198" cy="250" rx="12" ry="10"/><circle class="nucleolo-neuronio" cx="201" cy="250" r="3"/>
+                        </g>
+                    </svg>
+                    <figcaption>Esquemas simplificados; representação fora de escala.</figcaption>
+                </figure>
+                <div class="texto-selecionado">
+                    <h3 id="titulo-forma">Neurônio multipolar</h3>
+                    <p id="descricao-forma">Apresenta vários dendritos e um axônio.</p>
+                    <div class="atributo-explicacao">
+                        <h4>Exemplo</h4>
+                        <p id="exemplo-forma">Muitos neurônios motores.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="ative-neuronio" class="secao-conteudo secao-escura">
+            <div class="titulo-secao">
+
+                <h2>Ative o neurônio</h2>
+                <p>Como uma alteração elétrica na membrana chega às terminações de um neurônio mielinizado?</p>
+            </div>
+            <div class="painel-ativacao">
+                <div>
+                    <figure class="figura-ativacao">
+                        <svg class="diagrama-neuronio diagrama-ativacao" viewBox="0 0 900 340" role="img" aria-labelledby="titulo-ativacao descricao-ativacao">
+                            <title id="titulo-ativacao">Potencial de ação em um axônio mielinizado</title>
+                            <desc id="descricao-ativacao">Esquema simplificado fora de escala. Ramificações dendríticas chegam a um corpo celular com núcleo. O axônio contínuo passa sob segmentos de mielina separados por nódulos de Ranvier, até uma arborização terminal. A etapa atual é descrita abaixo e a região da membrana é realçada.</desc>
+                            <g class="parte-diagrama neuronio-dendritos" data-parte-diagrama="dendritos">
+                                <path d="M151 143 C134 130 122 111 118 91 C115 72 106 61 90 54 M118 91 C102 91 88 84 76 73 M117 87 C128 69 129 52 125 38"/>
+                                <path d="M148 153 C129 146 111 134 99 119 C88 105 75 99 59 99 M100 120 C84 122 69 116 56 107 M99 119 C103 102 100 87 92 74"/>
+                                <path d="M150 181 C132 192 119 208 113 226 C108 243 96 254 80 258 M113 226 C96 222 81 226 67 236 M113 226 C124 241 128 255 124 272"/>
+                                <path d="M161 197 C150 213 145 231 148 249 C150 266 144 279 131 289 M148 249 C133 251 120 260 111 273"/>
+                                <path d="M194 136 C207 122 214 105 213 88 C212 73 218 61 230 52 M213 88 C229 83 239 72 246 59"/>
+                            </g>
+                            <path class="parte-diagrama neuronio-axonio" data-parte-diagrama="axonio" d="M221 172 C245 168 264 169 282 171 C316 175 339 174 368 171 C397 168 421 168 447 171 C488 176 522 175 557 171 C599 166 630 169 660 171 C689 173 711 171 742 171"/>
+                            <g class="parte-diagrama neuronio-mielina" data-parte-diagrama="mielina">
+                                <path d="M278 151 C298 146 321 147 344 153 L342 188 C319 183 298 184 278 190 C273 178 273 163 278 151Z"/>
+                                <path d="M365 153 C386 147 408 147 430 152 L428 188 C407 183 386 184 365 190 C360 178 360 165 365 153Z"/>
+                                <path d="M451 152 C473 147 495 147 517 153 L515 188 C494 183 473 184 451 190 C446 178 446 164 451 152Z"/>
+                                <path d="M538 153 C560 147 582 147 604 152 L602 188 C581 183 560 184 538 190 C533 178 533 165 538 153Z"/>
+                                <path d="M625 152 C646 147 666 148 684 153 L682 188 C664 183 645 184 625 190 C620 178 620 164 625 152Z"/>
+                            </g>
+                            <g class="parte-diagrama neuronio-nodulos" data-parte-diagrama="nodulos">
+                                <path d="M348 154 C342 161 342 180 348 187 M361 154 C367 161 367 180 361 187"/><path d="M434 154 C428 161 428 180 434 187 M447 154 C453 161 453 180 447 187"/>
+                                <path d="M521 154 C515 161 515 180 521 187 M534 154 C540 161 540 180 534 187"/><path d="M608 154 C602 161 602 180 608 187 M621 154 C627 161 627 180 621 187"/>
+                            </g>
+                            <g class="parte-diagrama neuronio-terminacoes" data-parte-diagrama="terminacoes">
+                                <path d="M742 171 C765 169 779 163 792 148 C805 132 817 124 835 120 M792 148 C799 132 799 117 794 103 M794 103 C785 91 782 78 785 65 M794 103 C805 94 812 81 814 68"/>
+                                <path d="M760 171 C783 173 800 179 814 192 C826 203 839 208 853 207 M814 192 C816 209 825 220 838 229 M814 192 C829 184 842 183 856 187"/>
+                                <circle class="neuronio-botao" cx="785" cy="65" r="4.5"/><circle class="neuronio-botao" cx="814" cy="68" r="4.5"/><circle class="neuronio-botao" cx="835" cy="120" r="4.5"/>
+                                <circle class="neuronio-botao" cx="853" cy="207" r="4.5"/><circle class="neuronio-botao" cx="838" cy="229" r="4.5"/><circle class="neuronio-botao" cx="856" cy="187" r="4.5"/>
+                            </g>
+                            <g class="parte-diagrama neuronio-corpo" data-parte-diagrama="corpo">
+                                <path class="membrana-soma" d="M158 135 C146 141 141 153 146 165 C135 177 141 191 155 196 C158 211 174 218 188 210 C201 217 216 207 218 193 C231 184 230 169 220 158 C222 144 209 134 197 136 C187 124 169 125 158 135Z"/>
+                                <ellipse class="nucleo-neuronio" cx="176" cy="173" rx="12" ry="10"/><circle class="nucleolo-neuronio" cx="179" cy="173" r="3"/>
+                            </g>
+                            <g class="regiao-membrana" data-regiao="inicio"><path d="M226 153 C241 145 262 145 278 153 M226 189 C241 197 262 197 278 189"/></g>
+                            <g class="regiao-membrana" data-regiao="nodulo-1"><path d="M348 152 C342 159 342 181 348 188 M361 152 C367 159 367 181 361 188"/></g>
+                            <g class="regiao-membrana" data-regiao="nodulo-2"><path d="M434 152 C428 159 428 181 434 188 M447 152 C453 159 453 181 447 188"/></g>
+                            <g class="regiao-membrana" data-regiao="terminacoes"><path d="M742 171 C765 169 779 163 792 148 C805 132 817 124 835 120 M792 148 C799 132 799 117 794 103 M794 103 C785 91 782 78 785 65 M794 103 C805 94 812 81 814 68 M760 171 C783 173 800 179 814 192 C826 203 839 208 853 207 M814 192 C816 209 825 220 838 229 M814 192 C829 184 842 183 856 187"/></g>
+                        </svg>
+                        <figcaption><span class="legenda-anatomia">Da esquerda para a direita: corpo celular, axônio com mielina e nódulos de Ranvier, terminações axônicas. </span>Representação simplificada, fora de escala e desacelerada. Os destaques mostram alterações elétricas locais na membrana, não uma molécula viajando pelo axônio.</figcaption>
+                    </figure>
+                    <div class="legenda-membrana" aria-hidden="true"><span>━ Despolarização</span><span>┄ Repolarização</span></div>
+                    <div class="controles-etapas" role="group" aria-label="Controle do potencial de ação">
+                        <button id="aplicar-estimulo" class="botao-acao" type="button">Aplicar estímulo</button>
+                        <button id="pausar-neuronio" class="botao-acao secundario" type="button" disabled>Pausar</button>
+                        <button id="avancar-neuronio" class="botao-acao" type="button" hidden>Avançar etapa</button>
+                        <button id="reiniciar-neuronio" class="botao-acao secundario" type="button">Reiniciar</button>
+                    </div>
+                    <div class="cartao-etapa" aria-live="polite" aria-atomic="true">
+                        <p id="contador-ativacao" class="contador-etapa"></p>
+                        <h3 id="titulo-ativacao-etapa"></h3>
+                        <p id="texto-ativacao"></p>
+                        <p id="estado-ativacao" class="estado-execucao"></p>
+                    </div>
+                    <p id="modo-ativacao" class="nota-secao"></p>
+                </div>
+                <article class="detalhe-sinapse">
+                    <h3>Sinapse química, em detalhe</h3>
+                    <figure>
+                        <svg viewBox="0 0 340 290" role="img" aria-labelledby="titulo-sinapse descricao-sinapse">
+                            <title id="titulo-sinapse">Comunicação entre duas células</title>
+                            <desc id="descricao-sinapse">Uma terminação axônica contém vesículas. A entrada de cálcio favorece a liberação de neurotransmissores, que atravessam a fenda e se ligam a receptores da célula seguinte. O contorno espesso e o número identificam a etapa selecionada.</desc>
+                            <path d="M110 12 V43 C30 55 28 136 62 155 Q170 185 278 155 C312 136 310 55 230 43 V12" class="membrana-sinapse"/>
+                            <path d="M30 248 Q170 216 310 248 V280 H30Z" class="membrana-sinapse"/>
+                            <g class="parte-sinapse" data-sinapse="0"><path d="M170 13 V54 M160 42 170 54 180 42"/><text x="190" y="32">1</text></g>
+                            <g class="parte-sinapse" data-sinapse="1">
+                                <circle cx="110" cy="110" r="19"/><circle cx="169" cy="137" r="19"/><circle cx="225" cy="107" r="19"/>
+                                <path d="M20 100 H65 M55 90 65 100 55 110"/><text x="8" y="78">Ca²⁺</text><text x="252" y="85">2</text>
+                                <g class="neurotransmissores"><circle cx="106" cy="108" r="3"/><circle cx="115" cy="115" r="3"/><circle cx="166" cy="136" r="3"/><circle cx="175" cy="142" r="3"/><circle cx="222" cy="105" r="3"/></g>
+                            </g>
+                            <g class="parte-sinapse" data-sinapse="2"><g class="neurotransmissores"><circle cx="120" cy="195" r="4"/><circle cx="160" cy="181" r="4"/><circle cx="195" cy="203" r="4"/><circle cx="220" cy="186" r="4"/></g><text x="263" y="205">3</text></g>
+                            <g class="parte-sinapse" data-sinapse="3"><path d="M106 228 V242 H124 V225 M185 225 V239 H203 V228"/><circle cx="115" cy="226" r="4"/><circle cx="194" cy="223" r="4"/><text x="275" y="224">4</text></g>
+                            <g class="parte-sinapse" data-sinapse="4"><path d="M132 261 H215 M205 253 215 261 205 269"/><text x="234" y="275">5</text></g>
+                        </svg>
+                        <figcaption>Acima: terminação e vesículas. Ao centro: fenda sináptica. Abaixo: receptores da célula seguinte.</figcaption>
+                    </figure>
+                    <div class="cartao-etapa" aria-live="polite" aria-atomic="true">
+                        <p id="contador-sinapse" class="contador-etapa"></p>
+                        <h4 id="titulo-sinapse-etapa"></h4>
+                        <p id="texto-sinapse"></p>
+                    </div>
+                    <div class="controles-etapas" role="group" aria-label="Etapas da sinapse química">
+                        <button id="anterior-sinapse" class="botao-acao secundario" type="button" disabled>Anterior</button>
+                        <button id="proxima-sinapse" class="botao-acao" type="button">Próxima etapa</button>
+                    </div>
+                    <p class="nota-secao">Nem toda comunicação gera um novo impulso: o efeito depende dos receptores e da integração dos sinais recebidos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="estimulo-resposta" class="secao-conteudo">
+            <div class="titulo-secao">
+
+                <h2>Do estímulo à resposta</h2>
+                <p>Um exemplo de reflexo de retirada da mão. Percorra o circuito, uma etapa por vez.</p>
+            </div>
+            <div class="painel-reflexo">
+                <figure>
+                    <ol class="circuito-reflexo" aria-label="Circuito do reflexo de retirada">
+                        <li data-reflexo="mao"><span class="numero-estrutura">1</span>
+                            <svg viewBox="0 0 160 110" role="img" aria-label="Mão próxima de uma fonte de calor">
+                                <path d="M10 95 38 70 55 42 Q60 34 66 41 L60 60 93 22 Q101 14 105 23 L83 57 116 25 Q124 20 127 28 L99 63 131 40 Q140 36 140 46 L113 76 Q94 97 72 91 L46 105 M29 34 Q20 22 29 10 M46 29 Q37 17 46 5"/>
+                            </svg><span>Detecção na pele</span>
+                        </li>
+                        <li data-reflexo="sensitiva"><span class="numero-estrutura">2</span>
+                            <svg viewBox="0 0 160 110" role="img" aria-label="Via sensitiva conduzindo sinais em direção à medula">
+                                <path d="M10 74 Q40 74 60 54 T125 35 H149 M132 24 149 35 132 46 M80 49 V79"/><circle cx="80" cy="90" r="10"/>
+                            </svg><span>Via sensitiva →</span>
+                        </li>
+                        <li data-reflexo="medula"><span class="numero-estrutura">3</span>
+                            <svg viewBox="0 0 160 110" role="img" aria-label="Medula espinal em corte com circuitos de interneurônios">
+                                <ellipse cx="80" cy="55" rx="63" ry="47"/><path d="M80 34 Q45 6 51 41 Q64 55 51 70 Q42 101 80 74 Q118 101 109 70 Q96 55 109 41 Q115 6 80 34Z M54 39 72 50 91 66 111 72"/><circle cx="72" cy="50" r="4"/><circle cx="91" cy="66" r="4"/>
+                            </svg><span>Medula espinal</span>
+                        </li>
+                        <li data-reflexo="motora"><span class="numero-estrutura">4</span>
+                            <svg viewBox="0 0 160 110" role="img" aria-label="Via motora conduzindo sinais da medula ao músculo">
+                                <path d="M10 35 H36 Q65 35 85 57 T149 76 M132 65 149 76 132 87"/><circle cx="25" cy="35" r="12"/>
+                            </svg><span>Via motora →</span>
+                        </li>
+                        <li data-reflexo="musculo"><span class="numero-estrutura">5</span>
+                            <svg viewBox="0 0 160 110" role="img" aria-label="Músculo contraindo para retirar a mão">
+                                <path d="M8 84 37 66 Q75 12 119 37 L150 24 M8 84 48 90 Q105 100 125 59 L150 24 M37 66 Q79 26 119 37 M40 75 Q90 41 124 43 M48 84 Q97 59 125 51 M40 12 H70 M60 5 70 12 60 19 M120 12 H90 M100 5 90 12 100 19"/>
+                            </svg><span>Contração e retirada</span>
+                        </li>
+                    </ol>
+                    <figcaption>Esquema simplificado, fora de escala. A etapa em destaque tem contorno espesso e seu número aparece no painel.</figcaption>
+                </figure>
+                <div>
+                    <div class="cartao-etapa" aria-live="polite" aria-atomic="true">
+                        <p id="contador-reflexo" class="contador-etapa"></p>
+                        <h3 id="titulo-reflexo"></h3>
+                        <p id="texto-reflexo"></p>
+                    </div>
+                    <div class="controles-etapas" role="group" aria-label="Etapas do reflexo de retirada">
+                        <button id="voltar-reflexo" class="botao-acao secundario" type="button" disabled>Voltar</button>
+                        <button id="avancar-reflexo" class="botao-acao" type="button">Avançar</button>
+                        <button id="reiniciar-reflexo" class="botao-acao secundario" type="button">Reiniciar</button>
+                    </div>
+                </div>
+            </div>
+            <p class="nota-reflexo">A retirada pode começar antes da percepção consciente da dor. Enquanto a medula participa da resposta, informações também seguem para o encéfalo. Circuitos de interneurônios ajudam a inibir os músculos que se opõem à retirada, coordenando o movimento.</p>
+        </section>
+
+        <section id="quiz" class="secao-conteudo">
+            <div class="titulo-secao">
+                <h2>Teste o que aprendeu</h2>
+                <p>Cinco perguntas para revisar o conteúdo. Selecione uma alternativa e confirme para ver a explicação.</p>
+            </div>
+            <form id="formulario-quiz" novalidate>
+                <fieldset id="pergunta-quiz" aria-describedby="mensagem-quiz">
+                    <legend id="titulo-pergunta" tabindex="-1">
+                        <span id="contador-quiz" class="contador-quiz"></span>
+                        <span id="enunciado-quiz"></span>
+                    </legend>
+                    <div id="alternativas-quiz" class="alternativas-quiz"></div>
+                </fieldset>
+                <p id="mensagem-quiz" class="mensagem-quiz" role="status"></p>
+                <div id="correcao-quiz" class="correcao-quiz" role="status" aria-atomic="true">
+                    <p id="avaliacao-quiz"></p>
+                    <p id="resposta-correta"></p>
+                    <p id="explicacao-quiz"></p>
+                </div>
+                <div class="controles-etapas">
+                    <button id="confirmar-quiz" class="botao-acao" type="submit">Confirmar resposta</button>
+                    <button id="proxima-pergunta" class="botao-acao" type="button" hidden>Próxima pergunta</button>
+                </div>
+            </form>
+            <div id="resultado-quiz" class="resultado-quiz" hidden>
+                <h3 id="resumo-quiz" tabindex="-1"></h3>
+                <p>Você pode rever as seções e responder novamente quando quiser.</p>
+            </div>
+            <button id="reiniciar-quiz" class="botao-acao secundario" type="button">Reiniciar quiz</button>
+            <noscript><p>Ative o JavaScript no navegador para responder ao quiz e usar os outros controles interativos.</p></noscript>
+        </section>
+
+        <section id="fontes" class="secao-conteudo">
+            <h2>Fontes</h2>
+            <ul class="lista-fontes">
+                <li><a href="https://www.unifal-mg.edu.br/histologiainterativa/tecido-nervoso/">UNIFAL-MG — Tecido nervoso</a></li>
+                <li><a href="https://arquivos.sistemas.ufj.edu.br/arquivos/2023044231fdf720545456e254305ed71/Apostila_controle_motricidade_medula_tronco_cortex.PDF#page=9">UNESP — Motricidade somática</a></li>
+                <li><a href="https://www.todamateria.com.br/tecidos-do-corpo-humano/">Toda Matéria — Tecidos humanos</a></li>
+                <li><a href="https://www.todamateria.com.br/sinapses/">Toda Matéria — Sinapses</a></li>
+            </ul>
+        </section>
+
     </main>
 
-    <footer>
-
+    <footer class="rodape-autoria">
+        <p>Desenvolvido por <a href="https://github.com/Alvez-dev7">João Vitor Alves</a></p>
+        <p>Desenvolvedor web e criador do Cadê Histologia?</p>
     </footer>
 
+    <script src="script/conteudos.js" defer></script>
     <script src="script/script.js" defer></script>
 </body>
 </html>

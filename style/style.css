@@ -38,10 +38,10 @@ main {
 }
 
 header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
+    gap: 12px;
     min-height: 64px;
 }
 
@@ -50,9 +50,51 @@ header {
     font-size: 1.3rem;
 }
 
-#menuHeader {
+#botao-menu {
+    display: grid;
+    place-items: center;
+    min-width: 48px;
+    min-height: 48px;
+    background: transparent;
+    color: var(--texto-principal);
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#botao-menu:focus-visible,
+#menu-navegacao a:focus-visible {
+    outline: 2px solid var(--cor-cta);
+    outline-offset: 3px;
+}
+
+#menu-navegacao {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 4px;
+    padding: 0 0 12px;
+}
+
+#menu-navegacao[hidden] {
+    display: none;
+}
+
+#menu-navegacao a {
     display: flex;
     align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    color: var(--botoes);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#menu-navegacao a:hover {
+    background-color: var(--botao-hover);
 }
 
 #heroSection {
@@ -75,6 +117,9 @@ header {
 }
 
 #botao-explorar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: 48px;
     width: fit-content;
     padding: 0 20px;
@@ -83,29 +128,26 @@ header {
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
+    margin-top: 16px;
     border: 1px solid var(--botoes);
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 #botao-explorar:focus-visible,
-.botao-tecido:focus-visible {
+.botao-tecido:focus-visible,
+.botao-seletor:focus-visible {
     outline: 2px solid var(--cor-cta);
     outline-offset: 3px;
 }
 
 .micrografia,
 .img-tecido {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 100%;
-    aspect-ratio: 5 / 2;
-    padding: 12px;
-    background-color: rgb(128 128 128 / 15%);
+    aspect-ratio: 16 / 9;
     border-radius: 4px;
-    text-align: center;
-    line-height: 1.5;
+    object-fit: contain;
 }
 
 figure {
@@ -203,6 +245,298 @@ figcaption {
     line-height: 1.4;
 }
 
+.secao-conteudo {
+    margin: 0 auto 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(32 39 37 / 15%);
+}
+
+.titulo-secao {
+    margin-bottom: 18px;
+}
+
+.titulo-secao h2 {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    line-height: 1.25;
+}
+
+.titulo-secao p {
+    max-width: 48rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.painel-neuronio,
+.painel-glia,
+.painel-forma {
+    display: grid;
+    gap: 20px;
+}
+
+.figura-neuronio svg,
+.desenho-forma {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: var(--texto-principal);
+}
+
+.figura-neuronio svg {
+    overflow: visible;
+}
+
+.detalhe-axonio {
+    display: none;
+}
+
+.neuronio-dendritos,
+.neuronio-ramificacoes {
+    fill: none;
+    stroke: var(--botoes);
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.neuronio-axonio,
+.neuronio-corpo-ligacao {
+    fill: none;
+    stroke: var(--texto-principal);
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.neuronio-mielina {
+    fill: #E1ECE5;
+    stroke: var(--botoes);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.neuronio-nodulos {
+    fill: none;
+    stroke: var(--botoes);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.72;
+}
+
+.neuronio-terminacoes {
+    fill: none;
+    stroke: var(--botoes);
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.neuronio-corpo .membrana-soma {
+    fill: #E8E4DB;
+    stroke: var(--texto-principal);
+    stroke-width: 4;
+    stroke-linejoin: round;
+}
+
+.nucleo-neuronio {
+    fill: var(--cor-cta);
+    stroke: var(--fundo-principal);
+    stroke-width: 2;
+}
+
+.nucleolo-neuronio {
+    fill: var(--fundo-principal);
+}
+
+.neuronio-botao {
+    fill: var(--cor-cta);
+    stroke: var(--fundo-principal);
+    stroke-width: 1.5;
+}
+
+.parte-diagrama.destacada > path,
+.parte-diagrama.destacada > ellipse,
+.parte-diagrama.destacada > circle {
+    stroke: var(--cor-cta);
+    stroke-width: 7;
+}
+
+.parte-diagrama[data-parte-diagrama="mielina"].destacada > path {
+    fill: rgb(163 69 53 / 18%);
+}
+
+.parte-diagrama[data-parte-diagrama="nodulos"].destacada > path {
+    stroke-width: 4;
+}
+
+.parte-diagrama[data-parte-diagrama="terminacoes"].destacada > circle {
+    fill: var(--cor-cta);
+}
+
+.secao-escura .neuronio-dendritos,
+.secao-escura .neuronio-ramificacoes,
+.secao-escura .neuronio-axonio,
+.secao-escura .neuronio-corpo-ligacao,
+.secao-escura .neuronio-nodulos,
+.secao-escura .neuronio-terminacoes {
+    stroke: var(--fundo-principal);
+}
+
+.secao-escura .neuronio-mielina {
+    fill: var(--texto-principal);
+    stroke: var(--fundo-principal);
+}
+
+.secao-escura .neuronio-corpo .membrana-soma {
+    fill: #35423F;
+    stroke: var(--fundo-principal);
+}
+
+.secao-escura .nucleo-neuronio {
+    fill: var(--cor-cta);
+    stroke: var(--fundo-principal);
+}
+
+.secao-escura .nucleolo-neuronio {
+    fill: var(--fundo-principal);
+}
+
+.secao-escura .neuronio-botao {
+    fill: var(--cor-cta);
+    stroke: var(--fundo-principal);
+}
+
+.seletores-partes,
+.seletores-formas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.seletores-glia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.seletores-glia .botao-seletor,
+.seletores-formas .botao-seletor {
+    width: fit-content;
+    max-width: 100%;
+    justify-self: start;
+}
+
+.botao-seletor {
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 8px;
+    background-color: transparent;
+    color: var(--botoes);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+    border: 1px solid var(--botoes);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .botao-seletor:hover {
+        background-color: var(--botao-hover);
+    }
+}
+
+.botao-seletor:active {
+    background-color: var(--botao-pressionado);
+}
+
+.botao-seletor.selecionado {
+    background-color: var(--botoes);
+    color: var(--fundo-principal);
+}
+
+.texto-selecionado h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.texto-selecionado > p,
+.texto-selecionado .atributo-explicacao p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.texto-selecionado .atributo-explicacao {
+    margin-top: 16px;
+}
+
+.figura-glia {
+    position: relative;
+    width: 100%;
+    height: clamp(220px, 19vw, 280px);
+    max-width: 420px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.figura-glia.com-contexto {
+    display: grid;
+    grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+}
+
+.img-glia,
+.contexto-glia {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+}
+
+.img-glia {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.figura-glia.com-contexto .img-glia,
+.figura-glia.com-contexto .contexto-glia:not([hidden]) {
+    position: relative;
+    inset: auto;
+}
+
+.figura-glia.com-contexto .img-glia {
+    z-index: auto;
+    grid-row: 1;
+}
+
+.figura-glia.com-contexto .contexto-glia:not([hidden]) {
+    grid-row: 2;
+}
+
+.contexto-glia {
+    position: absolute;
+    inset: 0;
+}
+
+.contexto-glia[hidden] {
+    display: none;
+}
+
+.desenho-forma[hidden] {
+    display: none;
+}
+
 @media (min-width: 600px) {
     #botoes-tecidos {
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -213,9 +547,36 @@ figcaption {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
     }
+
+    .seletores-formas {
+        grid-template-columns: repeat(auto-fit, minmax(110px, max-content));
+        justify-content: start;
+    }
 }
 
 @media (min-width: 900px) {
+    header {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    #menu-navegacao {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+        padding: 0;
+    }
+
+    #menu-navegacao[hidden] {
+        display: none;
+    }
+
+    #menu-navegacao a {
+        white-space: nowrap;
+    }
+
     #heroSection {
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
         align-items: center;
@@ -223,13 +584,9 @@ figcaption {
         padding: 48px 0;
     }
 
-    #botao-explorar {
-        grid-column: 1;
-    }
-
     #heroSection figure {
         grid-column: 2;
-        grid-row: 1 / span 2;
+        grid-row: 1;
     }
 
     .informacao-tecido {
@@ -240,5 +597,541 @@ figcaption {
 
     .atributos-tecido {
         margin-top: 24px;
+    }
+
+    .painel-neuronio {
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+        align-items: center;
+        gap: 32px;
+    }
+
+    .painel-glia,
+    .painel-forma {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+        align-items: center;
+        gap: 32px;
+    }
+
+    .seletores-partes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seletores-formas {
+        grid-template-columns: repeat(auto-fit, minmax(110px, max-content));
+        justify-content: start;
+    }
+}
+
+.secao-escura {
+    padding: 24px 16px;
+    background: var(--texto-principal);
+    color: var(--fundo-principal);
+    border-radius: 6px;
+}
+
+
+.painel-ativacao,
+.painel-reflexo {
+    display: grid;
+    gap: 28px;
+}
+
+.painel-ativacao > *,
+.painel-reflexo > * {
+    min-width: 0;
+}
+
+.secao-escura figure {
+    color: inherit;
+}
+
+.figura-ativacao svg,
+.detalhe-sinapse svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.figura-ativacao {
+    padding: 16px 0;
+}
+
+.regiao-membrana {
+    fill: none;
+    stroke: var(--cor-cta);
+    stroke-width: 3;
+    opacity: 0.3;
+}
+
+.regiao-membrana.despolarizando {
+    stroke-width: 9;
+    opacity: 1;
+}
+
+.regiao-membrana.repolarizando {
+    stroke: var(--fundo-principal);
+    stroke-width: 7;
+    stroke-dasharray: 5 4;
+    opacity: 1;
+}
+
+.legenda-membrana {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 8px 0 18px;
+    font-size: 0.8rem;
+}
+
+.cartao-etapa {
+    padding: 16px;
+    background: var(--botao-hover);
+    border: 1px solid rgb(37 77 70 / 25%);
+    border-radius: 4px;
+}
+
+.cartao-etapa h3,
+.cartao-etapa h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.cartao-etapa p,
+.nota-secao,
+.nota-reflexo {
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.cartao-etapa .contador-etapa {
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.secao-escura .cartao-etapa {
+    background: rgb(245 242 235 / 5%);
+    border-color: rgb(245 242 235 / 30%);
+}
+
+.estado-execucao {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.controles-etapas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.botao-acao {
+    min-height: 48px;
+    padding: 10px 14px;
+    border: 1px solid var(--botoes);
+    border-radius: 4px;
+    background: var(--botoes);
+    color: var(--fundo-principal);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.botao-acao.secundario {
+    background: transparent;
+    color: var(--botoes);
+}
+
+.secao-escura .botao-acao {
+    border-color: var(--fundo-principal);
+}
+
+.secao-escura .botao-acao.secundario {
+    color: var(--fundo-principal);
+}
+
+.botao-acao:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.botao-acao:focus-visible {
+    outline: 3px solid var(--cor-cta);
+    outline-offset: 3px;
+}
+
+.secao-escura .botao-acao:focus-visible {
+    outline-color: var(--fundo-principal);
+}
+
+.botao-acao[hidden] {
+    display: none;
+}
+
+@media (hover: hover) {
+    .botao-acao:hover:not(:disabled) {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+}
+
+.nota-secao {
+    margin-top: 16px;
+    font-size: 0.85rem;
+}
+
+.detalhe-sinapse {
+    padding-top: 24px;
+    border-top: 1px solid rgb(245 242 235 / 30%);
+}
+
+.detalhe-sinapse > h3 {
+    font-size: 1.2rem;
+}
+
+.detalhe-sinapse svg {
+    max-width: 340px;
+    margin: 12px auto 0;
+}
+
+.membrana-sinapse {
+    fill: rgb(245 242 235 / 6%);
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.parte-sinapse {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    opacity: 0.5;
+}
+
+.parte-sinapse text {
+    fill: currentColor;
+    stroke: none;
+    font: 600 17px var(--fonte-principal);
+}
+
+.parte-sinapse.destacada {
+    opacity: 1;
+    stroke-width: 4;
+}
+
+.parte-sinapse.destacada text {
+    text-decoration: underline;
+}
+
+.neurotransmissores {
+    fill: currentColor;
+}
+
+.circuito-reflexo {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+    position: relative;
+}
+
+.circuito-reflexo li {
+    display: grid;
+    grid-template-columns: 28px 72px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid rgb(37 77 70 / 25%);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+@media (max-width: 599px) {
+    .detalhe-axonio {
+        display: block;
+        margin-top: 12px;
+        padding: 8px 0 4px;
+        border-top: 1px solid rgb(32 39 37 / 18%);
+        border-bottom: 1px solid rgb(32 39 37 / 18%);
+    }
+
+    .detalhe-axonio svg {
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .rotulo-detalhe-axonio,
+    .legenda-detalhe-axonio {
+        display: block;
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .circuito-reflexo {
+        gap: 18px;
+    }
+
+    .circuito-reflexo li:not(:last-child)::after {
+        content: "↓";
+        position: absolute;
+        left: 50%;
+        bottom: -23px;
+        color: var(--botoes);
+        font-size: 1.2rem;
+        font-weight: 700;
+        transform: translateX(-50%);
+    }
+}
+
+.circuito-reflexo li.destacada {
+    outline: 2px solid var(--botoes);
+    outline-offset: -2px;
+    background: var(--botao-hover);
+    font-weight: 700;
+}
+
+.circuito-reflexo svg {
+    display: block;
+    width: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.numero-estrutura {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.destacada .numero-estrutura {
+    background: var(--botoes);
+    color: var(--fundo-principal);
+}
+
+.nota-reflexo {
+    max-width: 65rem;
+    margin-top: 24px;
+}
+
+@media (min-width: 600px) {
+    .secao-escura {
+        padding: 32px;
+    }
+
+    .circuito-reflexo {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .circuito-reflexo li {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+    }
+}
+
+@media (min-width: 1000px) {
+    .painel-ativacao {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .detalhe-sinapse {
+        padding: 0 0 0 28px;
+        border-top: 0;
+        border-left: 1px solid rgb(245 242 235 / 30%);
+    }
+
+    .painel-reflexo {
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+        align-items: start;
+    }
+}
+
+@media (min-width: 600px) {
+    .legenda-anatomia {
+        display: none;
+    }
+}
+
+#formulario-quiz,
+.resultado-quiz {
+    max-width: 52rem;
+}
+
+#pergunta-quiz {
+    min-width: 0;
+    border: 0;
+}
+
+#titulo-pergunta {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.contador-quiz {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.alternativas-quiz {
+    display: grid;
+    gap: 10px;
+}
+
+.alternativa-quiz {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 48px;
+    padding: 14px;
+    border: 1px solid rgb(37 77 70 / 40%);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.alternativa-quiz input {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--botoes);
+}
+
+.alternativa-quiz:has(input:checked) {
+    background: var(--botao-hover);
+    border-color: var(--botoes);
+    box-shadow: inset 3px 0 var(--botoes);
+}
+
+#pergunta-quiz:disabled .alternativa-quiz {
+    cursor: default;
+}
+
+.mensagem-quiz:not(:empty) {
+    margin-top: 14px;
+    color: var(--cor-cta);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.correcao-quiz.respondido {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--botao-hover);
+    border-left: 3px solid var(--botoes);
+    line-height: 1.65;
+}
+
+.correcao-quiz p + p {
+    margin-top: 8px;
+}
+
+#avaliacao-quiz,
+#resposta-correta {
+    font-weight: 600;
+}
+
+#reiniciar-quiz {
+    margin-top: 16px;
+}
+
+.resultado-quiz h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.resultado-quiz p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+#fontes {
+    margin-bottom: 24px;
+}
+
+#fontes h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.lista-fontes {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.lista-fontes a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--botoes);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+.lista-fontes a:hover {
+    text-decoration: underline;
+}
+
+.rodape-autoria {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0 32px;
+    border-top: 1px solid rgb(32 39 37 / 15%);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.rodape-autoria p + p {
+    margin-top: 6px;
+}
+
+.rodape-autoria a {
+    color: var(--botoes);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.rodape-autoria a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+#titulo-pergunta:focus,
+#resumo-quiz:focus,
+.alternativa-quiz:has(input:focus-visible),
+.lista-fontes a:focus-visible,
+.rodape-autoria a:focus-visible {
+    outline: 2px solid var(--cor-cta);
+    outline-offset: 4px;
+}
+
+@media (min-width: 900px) {
+    .lista-fontes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 24px;
     }
 }

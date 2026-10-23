@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Esquema simplificado de uma célula de Schwann</title>
+  <desc id="descricao">Um axônio atravessa um segmento alongado de mielina formado por uma célula de Schwann. O núcleo fica na camada externa da célula e os intervalos nas extremidades representam nódulos de Ranvier.</desc>
+  <path d="M24 150H616" fill="none" stroke="#202725" stroke-width="14" stroke-linecap="round"/>
+  <path d="M112 114C153 76 214 72 278 82C318 88 353 88 396 82C460 72 521 76 562 114V186C521 224 460 228 396 218C353 212 318 212 278 218C214 228 153 224 112 186Z" fill="#DDE9E2" stroke="#254D46" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M130 124C182 99 224 99 278 108C319 115 354 115 396 108C450 99 492 99 544 124V176C492 201 450 201 396 192C354 185 319 185 278 192C224 201 182 201 130 176Z" fill="#C8D9D0" stroke="#254D46" stroke-width="4"/>
+  <path d="M147 136C196 120 232 122 278 130C319 137 354 137 396 130C442 122 478 120 527 136V164C478 180 442 178 396 170C354 163 319 163 278 170C232 178 196 180 147 164Z" fill="#F5F2EB" stroke="#254D46" stroke-width="3"/>
+  <path d="M225 82C248 43 292 34 334 48C363 58 378 74 386 91C350 100 319 100 278 94C259 91 242 87 225 82Z" fill="#A34535" stroke="#254D46" stroke-width="4"/>
+  <ellipse cx="307" cy="66" rx="28" ry="10" fill="#F5F2EB" transform="rotate(8 307 66)"/>
+  <path d="M106 111V189M568 111V189" stroke="#A34535" stroke-width="5" stroke-dasharray="7 8"/>
+</svg>

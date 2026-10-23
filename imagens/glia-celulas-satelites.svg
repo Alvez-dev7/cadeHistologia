@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Esquema simplificado de células satélites</title>
+  <desc id="descricao">Células satélites achatadas formam um revestimento ao redor do corpo celular de um neurônio de gânglio periférico.</desc>
+  <circle cx="200" cy="160" r="95" fill="#E7E2D7" stroke="#202725" stroke-width="5"/>
+  <circle cx="200" cy="160" r="26" fill="#254D46"/>
+  <g fill="#DDE9E2" stroke="#254D46" stroke-width="4">
+    <path d="M154 65Q200 48 246 65L238 83Q200 70 162 83Z"/>
+    <path d="M246 65Q284 83 304 119L285 127Q269 96 235 82Z"/>
+    <path d="M304 119Q320 160 304 201L285 193Q297 160 285 127Z"/>
+    <path d="M304 201Q284 237 246 255L235 238Q269 224 285 193Z"/>
+    <path d="M246 255Q200 272 154 255L162 237Q200 250 238 237Z"/>
+    <path d="M154 255Q116 237 96 201L115 193Q131 224 165 238Z"/>
+    <path d="M96 201Q80 160 96 119L115 127Q103 160 115 193Z"/>
+    <path d="M96 119Q116 83 154 65L165 82Q131 96 115 127Z"/>
+  </g>
+  <g fill="#A34535">
+    <ellipse cx="200" cy="67" rx="7" ry="4"/><ellipse cx="285" cy="112" rx="7" ry="4" transform="rotate(55 285 112)"/>
+    <ellipse cx="296" cy="172" rx="7" ry="4" transform="rotate(105 296 172)"/><ellipse cx="261" cy="235" rx="7" ry="4" transform="rotate(145 261 235)"/>
+    <ellipse cx="200" cy="253" rx="7" ry="4"/><ellipse cx="139" cy="235" rx="7" ry="4" transform="rotate(-145 139 235)"/>
+    <ellipse cx="104" cy="172" rx="7" ry="4" transform="rotate(-105 104 172)"/><ellipse cx="115" cy="112" rx="7" ry="4" transform="rotate(-55 115 112)"/>
+  </g>
+</svg>
