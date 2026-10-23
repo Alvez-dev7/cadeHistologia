@@ -1016,7 +1016,6 @@ figcaption {
 .alternativa-quiz:has(input:checked) {
     background: var(--botao-hover);
     border-color: var(--botoes);
-    box-shadow: inset 3px 0 var(--botoes);
 }
 
 #pergunta-quiz:disabled .alternativa-quiz {
@@ -1034,7 +1033,6 @@ figcaption {
     margin-top: 20px;
     padding: 16px;
     background: var(--botao-hover);
-    border-left: 3px solid var(--botoes);
     line-height: 1.65;
 }
 
