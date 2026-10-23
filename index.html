@@ -33,12 +33,7 @@
         <section id="heroSection">
 
             <div id="tituloPrincipal">
-                <h1>
-                    Pequenas estruturas.
-                </h1>
-                <h1>
-                    Grandes funções.
-                </h1>
+                <h1>Pequenas estruturas.<br>Grandes funções.</h1>
 
                 <p id="descricaoTituloPrincipal">Descubra os tecidos que formam seu corpo e como eles trabalham juntos.</p>
 
@@ -46,13 +41,11 @@
             <button id="botao-explorar">Explorar os tecidos</button>
 
             <figure>
-                <div class="micrografia">
+                <div class="micrografia" role="img" aria-label="Placeholder para micrografia de tecido nervoso">
                     Micrografia de tecido nervoso
                 </div>
                 <figcaption>
-                    <p>
-                        Imagem e Créditos em breve
-                    </p>
+                    <p>Imagem e crédito a definir</p>
                 </figcaption>
             </figure>
 
@@ -65,44 +58,38 @@
             </div>
 
             <div id="botoes-tecidos">
-                <button class="botao-tecido selecionado">Epitelial</button>
-                <button class="botao-tecido">Conjuntivo</button>
-                <button class="botao-tecido">Muscular</button>
-                <button class="botao-tecido ">Nervoso</button>
+                <button class="botao-tecido selecionado" type="button" data-tecido="epitelial" aria-pressed="true">Epitelial</button>
+                <button class="botao-tecido" type="button" data-tecido="conjuntivo" aria-pressed="false">Conjuntivo</button>
+                <button class="botao-tecido" type="button" data-tecido="muscular" aria-pressed="false">Muscular</button>
+                <button class="botao-tecido" type="button" data-tecido="nervoso" aria-pressed="false">Nervoso</button>
             </div>
 
-            <article class="informacao-tecido">
-
+            <article class="informacao-tecido" aria-live="polite">
                 <figure id="figura-tecido">
-
-                    <div class="img-tecido">
-
-                        A imagem do tecido vem aqui
+                    <div class="img-tecido" id="placeholder-tecido" role="img" aria-label="Placeholder de imagem do tecido epitelial">
+                        Placeholder de imagem: tecido epitelial
                     </div>
                     <figcaption>
-                        <p>
-                            Identificação da imagem e créditos em breve
-                        </p>
+                        <p id="legenda-tecido">Imagem e crédito a definir</p>
                     </figcaption>
                 </figure>
 
+                <div class="texto-tecido">
+                    <h3 id="tituloExplicacao">Tecido epitelial</h3>
+                    <p id="explicacaoTecido">Suas células ficam muito próximas, com pouca matriz extracelular entre elas. Forma revestimentos e glândulas.</p>
 
-                <h3 id="tituloExplicacao">Tecido Epitelial</h3>
-                <p id="explicacaoTecido">
-                    Suas células ficam muito próximas, formando revestimentos e glândulas.
-                </p>
+                    <div class="atributos-tecido">
+                        <div class="atributo-explicacao">
+                            <h4>Função</h4>
+                            <p id="funcaoTecido">Proteção, absorção e secreção.</p>
+                        </div>
 
-                <div class="atributo-explicacao">
-                    <h4>Função</h4>
-                    <p>
-                        Proteção, absorção e secreção.
-                    </p>
-                </div>
+                        <div class="atributo-explicacao">
+                            <h4>Onde encontrar</h4>
+                            <p id="localTecido">Epiderme, revestimento do intestino e glândulas.</p>
+                        </div>
+                    </div>
 
-                <div class="atributo-explicacao">
-                    <h4>Onde encontrar</h4>
-                    <p>
-                        Epiderme, revestimento do intestino e glândulas.                    </p>
                 </div>
             </article>
         </section>

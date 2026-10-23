@@ -2,160 +2,161 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 :root {
     --fundo-principal: #F5F2EB;
     --texto-principal: #202725;
     --botoes: #254D46;
     --cor-cta: #A34535;
-
     --botao-hover: rgb(37 77 70 / 8%);
     --botao-pressionado: rgb(37 77 70 / 16%);
-
     --fonte-principal: 'Montserrat', sans-serif;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     width: 100%;
-    height: 100%;
     font-family: var(--fonte-principal);
     background-color: var(--fundo-principal);
     color: var(--texto-principal);
-    padding: 0 10px;
 }
 
+body {
+    padding: 0 20px;
+}
 
-header{
+header,
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     min-height: 64px;
-
-   
 }
 
-#tituloHeader{
+#tituloHeader {
     font-weight: 750;
     font-size: 1.3rem;
 }
 
-#tituloPrincipal{
-    font-size: 0.9rem;
-
-    margin: 40px 0 44px 0;
+#menuHeader {
+    display: flex;
+    align-items: center;
 }
 
-#descricaoTituloPrincipal{
-    font-weight: 400;
-    margin: 8px 0 0 0;
-    line-height: 1.5rem;
+#heroSection {
+    display: grid;
+    gap: 24px;
+    padding: 24px 0 32px;
 }
 
-#botao-explorar{
-    min-height: 45px;
-    min-width: 220px;
+#tituloPrincipal h1 {
+    font-size: clamp(1.6rem, 8vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
 
+#descricaoTituloPrincipal {
+    max-width: 38rem;
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#botao-explorar {
+    min-height: 48px;
+    width: fit-content;
+    padding: 0 20px;
     background-color: var(--botoes);
     color: var(--fundo-principal);
-
-    font-weight: 400;
+    font-family: inherit;
     font-size: 1rem;
-
+    font-weight: 600;
+    border: 1px solid var(--botoes);
     border-radius: 5px;
-    border: none;
+    cursor: pointer;
 }
 
-.micrografia{
-    display: flex;
-    flex-flow: column nowrap;
+#botao-explorar:focus-visible,
+.botao-tecido:focus-visible {
+    outline: 2px solid var(--cor-cta);
+    outline-offset: 3px;
+}
 
+.micrografia,
+.img-tecido {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    aspect-ratio: 4/3;
-    background-color: rgba(128, 128, 128, 0.149);
-
-    margin: 32px 0px 8px 0px;
-
-    border-radius: 6px;
+    aspect-ratio: 5 / 2;
+    padding: 12px;
+    background-color: rgb(128 128 128 / 15%);
+    border-radius: 4px;
+    text-align: center;
+    line-height: 1.5;
 }
 
-figure{
+figure {
+    min-width: 0;
     color: var(--texto-principal);
-    margin: 0;
 }
 
-figcaption{
+figcaption {
+    margin-top: 6px;
     font-size: 0.8rem;
-    font-weight: 400;
+    line-height: 1.5;
 }
 
-section#tecidos{
-    display: flex;
-    flex-flow: column nowrap;
-
-    width: 100%;
-
-    margin-top: 26px;
+#tecidos {
+    margin: 0 auto 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(32 39 37 / 15%);
 }
 
-
-#tituloTecido > h2{
+#tituloTecido h2 {
     font-size: 1.4rem;
-    font-weight: 700;
-
+    line-height: 1.25;
     margin-bottom: 8px;
 }
 
-#tituloTecido > p{
-    font-size: 0.9rem;
-    font-weight: 400;
-
+#tituloTecido > p {
     margin-bottom: 16px;
-    line-height: 1.3rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-#botoes-tecidos{
+#botoes-tecidos {
     display: grid;
-    flex-flow: row nowrap;
-
-    justify-content: space-between;
-
-    width: 100%;
-    min-height: 130px;
-
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.botao-tecido{
+.botao-tecido {
+    min-width: 0;
     min-height: 48px;
-    width: 100%;
-
-    font-size: 0.8rem;
-    font-weight: 600;
-
-
+    padding: 10px;
     background-color: transparent;
     color: var(--botoes);
-
-    font-weight: 400;
-    font-size: 1rem;
-
-    padding: 12px 16px;
-
-    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
     border: 1px solid var(--botoes);
+    border-radius: 4px;
+    cursor: pointer;
 }
-
 
 @media (hover: hover) {
     .botao-tecido:hover {
@@ -172,44 +173,72 @@ section#tecidos{
     color: var(--fundo-principal);
 }
 
-.botao-tecido:focus-visible {
-    outline: 2px solid var(--cor-cta);
-    outline-offset: 3px;
+.informacao-tecido {
+    display: grid;
+    gap: 16px;
 }
 
-figure#figura-tecido{
-    margin: 24px 0px 20px 0px;
+#tituloExplicacao {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    line-height: 1.3;
 }
 
-.img-tecido{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    aspect-ratio: 5/2;
-    height: auto;
-    object-fit: cover;
-
-
-    background-color: rgba(128, 128, 128, 0.149);
-    border-radius: 6px;
-}
-
-#tituloExplicacao{
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-#explicacaoTecido{
+#explicacaoTecido,
+.atributo-explicacao p {
+    font-size: 1rem;
     font-weight: 400;
-
-    margin-top: 8px;
-    line-height: 1.6rem;
+    line-height: 1.6;
 }
 
-.atributos-explicacao{
-    display: flex;
-    flex-flow: column nowrap;
-    
+.atributos-tecido {
+    display: grid;
+    gap: 16px;
     margin-top: 20px;
+}
+
+.atributo-explicacao h4 {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+    #botoes-tecidos {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .atributos-tecido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    #heroSection {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        align-items: center;
+        column-gap: 48px;
+        padding: 48px 0;
+    }
+
+    #botao-explorar {
+        grid-column: 1;
+    }
+
+    #heroSection figure {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .informacao-tecido {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: start;
+        gap: 24px;
+    }
+
+    .atributos-tecido {
+        margin-top: 24px;
+    }
 }
